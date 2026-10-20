@@ -367,4 +367,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 700);
     });
   }
+
+  // 14. W3C VALIDATOR CHYTRÉ ODKAZY PRO LOKÁLNÍ I ŽIVÉ PROSTŘEDÍ
+  const w3cHtmlBadge = document.getElementById('w3cHtmlBadge');
+  const w3cCssBadge = document.getElementById('w3cCssBadge');
+
+  if (w3cHtmlBadge && w3cCssBadge) {
+    const isLocal = window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (isLocal) {
+      w3cHtmlBadge.href = 'https://validator.w3.org/#validate_by_upload';
+      w3cHtmlBadge.title = 'Lokální soubor: Otevře W3C Validator pro nahrání souboru index.html';
+      w3cCssBadge.href = 'https://jigsaw.w3.org/css-validator/#validate_by_upload';
+      w3cCssBadge.title = 'Lokální soubor: Otevře W3C CSS Validator pro nahrání souboru style.css';
+    } else {
+      w3cHtmlBadge.href = `https://validator.w3.org/nu/?doc=${encodeURIComponent(window.location.href)}`;
+      w3cCssBadge.href = `https://jigsaw.w3.org/css-validator/validator?uri=${encodeURIComponent(window.location.href)}`;
+    }
+  }
 });

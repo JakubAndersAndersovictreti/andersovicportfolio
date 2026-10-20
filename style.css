@@ -1862,6 +1862,62 @@ section {
   font-size: 0.88rem;
 }
 
+/* W3C Validátory v patičce */
+.footer-validators {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.validator-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass-bright);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-smooth);
+}
+
+.validator-badge:hover {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+}
+
+.validator-icon {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.validator-label {
+  color: var(--text-muted);
+}
+
+.validator-badge:hover .validator-label {
+  color: #ffffff;
+}
+
+.validator-check-icon {
+  color: var(--accent-emerald);
+  transition: transform var(--transition-fast);
+}
+
+.validator-badge:hover .validator-check-icon {
+  transform: scale(1.2);
+}
+
 .back-to-top-btn {
   display: inline-flex;
   align-items: center;
